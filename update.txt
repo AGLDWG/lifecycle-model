@@ -1,3 +1,14 @@
+* publisher
+
+replace
+
+https://www.linked.data.gov.au/org/agldwg
+
+with
+
+<dd><a href="https://www.linked.data.gov.au/org/agldwg">Australian Government Linked Data Working Group</a></dd>
+
+
 * dedupe schema.org licenses
 
 * replace

@@ -283,6 +283,21 @@ td {
     <script id="schema.org" type="application/ld+json">
 [
   {
+    "@id": "https://orcid.org/0000-0002-8742-7730",
+    "https://schema.org/email": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "nick@kurrawong.ai"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Nicholas J. Car"
+      }
+    ]
+  },
+  {
     "@id": "https://linked.data.gov.au/def/lifecycle",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -314,21 +329,6 @@ td {
         "@id": "https://www.linked.data.gov.au/org/agldwg"
       }
     ]
-  },
-  {
-    "@id": "https://orcid.org/0000-0002-8742-7730",
-    "https://schema.org/email": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "nick@kurrawong.ai"
-      }
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Nicholas J. Car"
-      }
-    ]
   }
 ]
 	</script>
@@ -357,7 +357,7 @@ td {
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/publisher" title="An entity responsible for making the resource available. Defined in DCMI Metadata Terms">Publisher</a>
             </dt>
-            <dd>https://www.linked.data.gov.au/org/agldwg</dd>
+            <dd><a href="https://www.linked.data.gov.au/org/agldwg">Australian Government Linked Data Working Group</a></dd>
           </div>
           <div>
             <dt>
@@ -413,12 +413,6 @@ td {
               <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionInfo" title="The annotation property that provides version information for an ontology or another OWL construct. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Info</a>
             </dt>
             <dd><p>0.0.1</p></dd>
-          </div>
-          <div>
-            <dt>
-              <a class="hover_property" href="http://purl.org/dc/terms/provenance" title="A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation. Defined in DCMI Metadata Terms">Provenance</a>
-            </dt>
-            <dd><p>This model was made for the Queensland Department of Resources, Spatial Information unit in 2023 to assist with the lifecylcing of components within multiple ontologies.</p></dd>
           </div>
           <div>
             <dt>
@@ -489,17 +483,16 @@ ex:name-1
       time:hasBeginning [ time:inXSDDate &quot;1982-02-10&quot;^^xsd:date ] ;
       time:hasEnd [ time:inXSDDate &quot;1982-05-11&quot;^^xsd:date ] ;
     ] ;
-    dcterms:type &lt;http://example.com/stage/proposed&gt; ;
+    sdo:additionalType &lt;http://example.com/stage/proposed&gt; ;
   ] ,
   [
     # this Stage is still in effect - no hasEnd given
     time:hasTime [
       time:hasBeginning [ time:inXSDDate &quot;1982-05-11&quot;^^xsd:date ] ;
     ] ;
-    dcterms:type &lt;http://example.com/stage/gazetted&gt; ;
+    sdo:additionalType &lt;http://example.com/stage/gazetted&gt; ;
   ] ,
-.
-    </pre>
+.</pre>
               </td>
             </tr>
             <tr>
@@ -518,15 +511,15 @@ ex:name-1
       </div>
       <div class="section" id="objectproperties">
         <h2>Object Properties</h2>
-        <div class="property entity" id="LifecycleStagetype">
-          <h3>Lifecycle Stage type
+        <div class="property entity" id="additionaltype">
+          <h3>additional type
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://purl.org/dc/terms/type</code>
+                <code>https://schema.org/additionalType</code>
               </td>
             </tr>
             <tr>
@@ -534,44 +527,43 @@ ex:name-1
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
               </th>
               <td>
-                <a href="http://purl.org/dc/terms/">DCMI Metadata Terms</a>
+                <a href="https://schema.org/">sdo:</a>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>The nature or genre of the resource.</p></td>
+              <td><p>An additional type for the item, typically used for adding more specific types from external vocabularies</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>This property is taken from Dublin Core Terms and its nature is unchanged here however it is recommended for use here with a SKOS Concept range value</p></td>
+              <td><p>Use this property to indicate the specialised type of a Lifeycle Stage which is likely selected from a controlled vocabulary</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
               </th>
               <td>
-                <pre>See example for LifecycleStage</pre>
+                <pre>See the example for :LifecycleStage</pre>
               </td>
             </tr>
             <tr>
               <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/provenance" title="A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation. Defined in DCMI Metadata Terms">Provenance</a>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
               </th>
-              <td><p>Taken from the <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core Terms</a></p></td>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a>
+              </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
               </th>
               <td>
-                <span>
-                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
+                <a href="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a>
               </td>
             </tr>
           </table>
@@ -614,12 +606,6 @@ ex:name-1
               <td>
                 <pre>See example for LifecycleStage</pre>
               </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/provenance" title="A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation. Defined in DCMI Metadata Terms">Provenance</a>
-              </th>
-              <td><p>Taken from the <a href="https://www.w3.org/TR/owl-time/">Time Ontology in OWL</a></p></td>
             </tr>
             <tr>
               <th>
@@ -692,10 +678,6 @@ ex:name-1
           <dt id=":">:</dt>
           <dd>
             <code>https://linked.data.gov.au/def/lifecycle/</code>
-          </dd>
-          <dt id="dcterms">dcterms</dt>
-          <dd>
-            <code>http://purl.org/dc/terms/</code>
           </dd>
           <dt id="model">model</dt>
           <dd>
@@ -787,7 +769,7 @@ ex:name-1
           </h4>
           <ul class="second">
             <li>
-              <a href="#LifecycleStagetype">Lifecycle Stage type</a>
+              <a href="#additionaltype">additional type</a>
             </li>
             <li>
               <a href="#hastime">has time</a>
@@ -804,9 +786,6 @@ ex:name-1
           <ul class="second">
             <li>
               <a href="#"></a>
-            </li>
-            <li>
-              <a href="#dcterms">dcterms</a>
             </li>
             <li>
               <a href="#model">model</a>
