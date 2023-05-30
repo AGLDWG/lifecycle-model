@@ -1,0 +1,47 @@
+* dedupe schema.org licenses
+
+* replace
+
+              <ul>
+                <li>
+                  <a href="https://rdflicense.linkeddata.es/rdflicense/cc-by4.0">https://rdflicense.linkeddata.es/rdflicense/cc-by4.0</a>
+                </li>
+                <li>
+                  <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>
+                </li>
+              </ul>
+
+with
+
+              <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0</a>
+
+* replace <td><p>Taken from the Time Ontology in OWL (https://www.w3.org/TR/owl-time/)</p></td>
+    * with <td><p>Taken from the <a href="https://www.w3.org/TR/owl-time/">Time Ontology in OWL</a></p></td>
+
+* replace <td><p>Taken from Dublin Core Terms (https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)</p></td>
+    * with <td><p>Taken from the <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core Terms</a></p></td>
+
+* add Introduction section
+
+      <div class="section" id="introduction">
+        <h2>Introduction</h2>
+        <p>This model is a micro model: a small model that only introduces two new model elements - a single class and a single property - and reuses two existing properties from well-known ontologies/vocabularies to model the lifecycle of something. It does this by allowing something to indicate one or more lifecycle stages which then indicate their type and the time for which that stage is, or was, applicable.</p>
+        <div style="text-align:center;">
+          <img src="img/overview.svg" alt="Model overview diagram" style="width:40%" /><br />
+          <span style="font-weight: bold;">Figure 1:</span> Overview of this model
+        </div>
+        <p>The property <code>hasLifecycleStage</code> shown in Figure 1 indicates a <code>LifecycleStage</code> instance and may indicate it for <em>anything</em>, i.e. any kind of object. The example in Figure 2 below shows it used for an <code>Address</code> object.</p>
+        <div style="text-align:center;">
+          <img src="img/example.svg" alt="Model use exampl diagram" style="width:80%" /><br />
+          <span style="font-weight: bold;">Figure 2:</span> Example use of this model showing two <code>Lifecycle Stages</code> for an <code>Address</code> object.
+        </div>
+      </div>
+
+
+* add Introduction link to ToC
+
+        <li>
+          <h4>
+            <a href="#introduction">Introduction</a>
+          </h4>
+        </li>

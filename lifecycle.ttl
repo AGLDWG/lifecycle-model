@@ -1,0 +1,105 @@
+PREFIX : <https://linked.data.gov.au/def/lifecycle/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX model: <https://linked.data.gov.au/def/lifecycle>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sdo: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+model:
+    a owl:Ontology ;
+    dcterms:provenance "This model was made for the Queensland Department of Resources, Spatial Information unit in 2023 to assist with the lifecylcing of components within multiple ontologies."@en ;
+    owl:versionIRI :0.0.1 ;
+    owl:versionInfo "0.0.1" ;
+    sdo:codeRepository "https://github.com/AGLDWG/lifecycle-ont/"^^xsd:anyURI ;
+    sdo:copyrightHolder <https://orcid.org/0000-0002-8742-7730> ;
+    sdo:copyrightNotice "(c) Nicholas J. Car, 2023" ;
+    sdo:creator <https://orcid.org/0000-0002-8742-7730> ;
+    sdo:dateCreated "2023-05-30"^^xsd:date ;
+    sdo:dateIssued "2023-05-30"^^xsd:date ;
+    sdo:dateModified "2022-05-30"^^xsd:date ;
+    sdo:description "This model allows for the representation of lifecycle stages for any Resource. The specific stages are expected to be taken from vocabularies relevant to the Resource."@en ;
+    sdo:license
+        <https://rdflicense.linkeddata.es/rdflicense/cc-by4.0> ,
+        "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    sdo:name "Lifecycle Model"@en ;
+    sdo:publisher <https://www.linked.data.gov.au/org/agldwg> ;
+.
+
+<https://linked.data.gov.au/org/agldwg>
+    a sdo:Organization ;
+    sdo:name "Australian Government Linked Data Working Group" ;
+    sdo:url "https://www.linked.data.gov.au"^^xsd:anyURI ;
+.
+
+<https://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:email "nick@kurrawong.ai"^^xsd:anyURI ;
+    sdo:memberOf <https://www.linked.data.gov.au/org/agldwg> ;
+    sdo:name "Nicholas J. Car"@en ;
+.
+
+dcterms:type
+    a owl:ObjectProperty ;
+    dcterms:provenance "Taken from Dublin Core Terms (https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)" ;
+    rdfs:isDefinedBy dcterms: ;
+    rdfs:range skos:Concept ;
+    skos:definition "The nature or genre of the resource."@en ;
+    skos:example "See example for LifecycleStage"@en ;
+    skos:prefLabel "Lifecycle Stage type"@en ;
+    skos:scopeNote "This property is taken from Dublin Core Terms and its nature is unchanged here however it is recommended for use here with a SKOS Concept range value" ;
+.
+
+time:hasTime
+    a owl:ObjectProperty ;
+    dcterms:provenance "Time Ontology in OWL (https://www.w3.org/TR/owl-time/)" ;
+    rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
+    rdfs:range time:TemporalEntity ;
+    skos:definition "Supports the association of a temporal entity (instant or interval) to any thing."@en ;
+    skos:example "See example for LifecycleStage"@en ;
+    skos:prefLabel "has time"@en ;
+    skos:scopeNote "This property is defined by the Time Ontology in OWL and is a general purpose property for indicating that something has a temporality. It should be used in this model to indicate the timespan of a Lifecycle Stage" ;
+.
+
+:hasLifecycleStage
+    a owl:ObjectProperty ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:isDefinedBy model: ;
+    rdfs:range :LifecycleStage ;
+    skos:definition "Indicates a Lifecycle Stage of a Resource"@en ;
+    skos:example "See example for LifecycleStage"@en ;
+    skos:prefLabel "has Lifecycle Stage"@en ;
+.
+
+:LifecycleStage
+    a owl:Class ;
+    rdfs:isDefinedBy model: ;
+    skos:definition "A distinct part of a resource's lifecycle"@en ;
+    skos:example """
+# showing lifecycle stages for a Geographical Name
+ex:name-1
+  a gn:GeographicalName ;
+  :hasLifeCycleStage [
+    # this Stage has ceased
+    time:hasTime [
+      time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
+      time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
+    ] ;
+    dcterms:type <http://example.com/stage/proposed> ;
+  ] ,
+  [
+    # this Stage is still in effect - no hasEnd given
+    time:hasTime [
+      time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
+    ] ;
+    dcterms:type <http://example.com/stage/gazetted> ;
+  ] ,
+.
+    """@en ;
+    skos:prefLabel "Lifecycle Stage"@en ;
+.
+
+
+

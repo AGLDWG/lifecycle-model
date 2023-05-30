@@ -1,0 +1,21 @@
+= Lifecycle Model
+
+This model is a micro model: a small model that only introduces two new model elements - a single class and a single property - and reuses two existing properties from well-known ontologies/vocabularies to model the lifecycle of something. It does this by allowing something to indicate one or more lifecycle stages which then indicate their type and the time for which that stage is, or was, applicable.
+
+See this model's documentation online at its persistent identifier location:
+
+* *https://linked.data.gov.au/def/lifecycle*
+
+== License
+
+https://creativecommons.org/licenses/by/4.0/[Creative Commons 4.0]
+
+== Contact
+
+This model was developed by Nicholas Car as a member of the https://www.linked.data.gov.au[Australian Government Linked Data Working Group] for multiple uses:
+
+*Nicholas Car* +
+_AGLDWG Member_ +
+_Data Architect & Semantic Web Specialist_ +
+nick@kurrawong.ai +
+GitHub: @nicholascar
