@@ -45,3 +45,13 @@ with
             <a href="#introduction">Introduction</a>
           </h4>
         </li>
+
+
+* add repo to metadata
+
+          <div>
+            <dt>
+              <a class="hover_property" href="https://schema.org/codeRepository" title="Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex).">Code Repository</a>
+            </dt>
+            <dd><p><a href="https://github.com/AGLDWG/lifecycle-model/">https://github.com/AGLDWG/lifecycle-model/</a></p></dd>
+          </div>

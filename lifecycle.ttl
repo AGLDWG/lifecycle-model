@@ -13,7 +13,7 @@ model:
     dcterms:provenance "This model was made for the Queensland Department of Resources, Spatial Information unit in 2023 to assist with the lifecylcing of components within multiple ontologies."@en ;
     owl:versionIRI :0.0.1 ;
     owl:versionInfo "0.0.1" ;
-    sdo:codeRepository "https://github.com/AGLDWG/lifecycle-ont/"^^xsd:anyURI ;
+    sdo:codeRepository "https://github.com/AGLDWG/lifecycle-model/"^^xsd:anyURI ;
     sdo:copyrightHolder <https://orcid.org/0000-0002-8742-7730> ;
     sdo:copyrightNotice "(c) Nicholas J. Car, 2023" ;
     sdo:creator <https://orcid.org/0000-0002-8742-7730> ;
