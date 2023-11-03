@@ -17,13 +17,13 @@ model:
     sdo:creator <https://orcid.org/0000-0002-8742-7730> ;
     sdo:dateCreated "2023-05-30"^^xsd:date ;
     sdo:dateIssued "2023-05-30"^^xsd:date ;
-    sdo:dateModified "2022-05-30"^^xsd:date ;
+    sdo:dateModified "2023-11-04"^^xsd:date ;
     sdo:description "This model allows for the representation of lifecycle stages for any Resource. The specific stages are expected to be taken from vocabularies relevant to the Resource."@en ;
     sdo:license
         <https://rdflicense.linkeddata.es/rdflicense/cc-by4.0> ,
         "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
     sdo:name "Lifecycle Model"@en ;
-    sdo:publisher <https://www.linked.data.gov.au/org/agldwg> ;
+    sdo:publisher <https://linked.data.gov.au/org/agldwg> ;
     skos:historyNote "This model was made for the Queensland Department of Resources, Spatial Information unit in 2023 to assist with the lifecylcing of components within multiple ontologies."@en ;
 .
 
@@ -36,7 +36,7 @@ model:
 <https://orcid.org/0000-0002-8742-7730>
     a sdo:Person ;
     sdo:email "nick@kurrawong.ai"^^xsd:anyURI ;
-    sdo:memberOf <https://www.linked.data.gov.au/org/agldwg> ;
+    sdo:memberOf <https://linked.data.gov.au/org/agldwg> ;
     sdo:name "Nicholas J. Car"@en ;
 .
 
